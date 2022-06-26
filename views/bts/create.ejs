@@ -1,0 +1,104 @@
+<%- include ../header %>
+<%- include ../navbar %>
+<%- include ../sidebar %>
+    
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Tambah Data BTS</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Create</li>
+                </ol>
+            </div>
+            </div>
+        </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                      <h3 class="card-title">Tambah Data BTS</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="/bts/create" method="POST" >
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="nodeBID">NodeB ID</label>
+                          <input type="text" name="nodeBID" class="form-control" id="nodeBID" placeholder="Masukan nodeBID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Masukan Latitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Masukan Longitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="antennaHeight">Antenna Height</label>
+                            <input type="number" name="antennaHeight" class="form-control" id="antennaHeight" placeholder="Masukan band" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="band">Band</label>
+                            <input type="number" name="band" class="form-control" id="band" placeholder="Masukan band" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bandwidth">Bandwidth (MHz)</label>
+                            <input type="number" name="bandwidth" class="form-control" id="bandwidth" placeholder="Masukan bandwidth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="scPower">Subcarrier Power (dBm)</label>
+                            <input type="text" name="scPower" class="form-control" id="scPower" placeholder="Masukan Subcarrier Power" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="EIRP">EIRP</label>
+                            <input type="text" name="EIRP" class="form-control" id="EIRP" placeholder="Masukan EIRP" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pnLoss">Penetration Loss (dB)</label>
+                            <input type="number" name="pnLoss" class="form-control" id="pnLoss" placeholder="Masukan Penetration Loss" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="shadowFading">Shadow Fading Margin (dB)</label>
+                            <input type="number" name="shadowFading" class="form-control" id="shadowFading" placeholder="Masukan Shadow Fading Margin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="MAPL">MAPL</label>
+                            <input type="text" name="MAPL" class="form-control" id="MAPL" placeholder="Masukan MAPL" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="radius">Radius (m)</label>
+                            <input type="text" name="radius" class="form-control" id="radius" placeholder="Masukan radius (m)" required>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+      
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                      </div>
+                    </form>
+                  </div> 
+            </div>
+            <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+<%- include ../footer %>
+<%- include ../js %>
+    

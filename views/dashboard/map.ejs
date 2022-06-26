@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Peta Data Pathloss</h3>
+        </div>
+        <div class="card-body">
+            <div id="map" ></div>
+            <!-- <script src="javascripts/map.js"></script> -->
+            <script>
+               var map = L.map('map').setView([-7.302535, 112.760135], 13);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap'
+                }).addTo(map);
+                var dataMap = JSON.parse('<%-JSON.stringify(pengukuran)%>');
+                var iconBTS = L.icon({
+                    iconUrl: 'images/pin.png',
+                    iconSize: [30,30]
+                })
+                for (i=0;i<dataMap.length;i++){
+                    L.marker([dataMap[i].latitude,dataMap[i].longitude],{icon:iconBTS}).addTo(map)
+                    .bindPopup(
+                        "<b>Nama Tempat: "+dataMap[i].namaTempat+"</b>"+
+                        "<br>Deskripsi: "+dataMap[i].deskripsi+
+                        "<br> SNR: "+dataMap[i].SNR+" dB"+
+                        "<br> CNR: "+dataMap[i].CNR+
+                        "<br> BER: "+ dataMap[i].BER+
+                        "<br> Path Loss: "+dataMap[i].pathLoss+" dB"
+                    );
+                }
+            </script>
+        </div>
+      </div>
+    </div>
+</div>
+

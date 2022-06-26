@@ -1,0 +1,49 @@
+
+<!-- /.card-header -->
+<div class="card-body">
+  <table id="tablePengukuran" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Tempat</th>
+      <th>Deskripsi</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>SNR (dB)</th>
+      <th>CNR</th>
+      <th>BER</th>
+      <th>Path Loss (dB)</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%  for (let i = 0; i < pengukuran.length; i++){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= pengukuran[i].namaTempat %></td>
+            <td><%= pengukuran[i].deskripsi %></td>
+            <td><%= pengukuran[i].longitude %></td>
+            <td><%= pengukuran[i].latitude %></td>
+            <td><%= pengukuran[i].SNR %></td>
+            <td><%= pengukuran[i].CNR %></td>
+            <td><%= pengukuran[i].BER %></td>
+            <td><%= pengukuran[i].pathLoss %></td>
+            <td>
+              <form action="/delete/<%= pengukuran[i]._id %>?_method=DELETE" method="POST">
+                  <a href="/edit/<%= pengukuran[i]._id %>" class="btn btn-warning">
+                      <i class="fa fa-pencil-alt"></i>
+                      Edit
+                  </a>
+              
+                  <button class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                      Delete
+                  </button>
+              </form>
+            </td>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<!-- /.card-body -->

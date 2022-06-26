@@ -1,0 +1,58 @@
+
+<!-- /.card-header -->
+<div class="card-body">
+    <table id="tableBTS" class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>No</th>
+        <th>NodeB ID</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Antenna Height</th>
+        <th>Band</th>
+        <th>BandWidth</th>
+        <th>Subcarrier Power (dBm)</th>
+        <th>EIRP</th>
+        <th>Penetration Loss</th>
+        <th>Shadow Fading Margin (dB)</th>
+        <th>MAPL</th>
+        <th>Radius (m)</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+        <%  for (let i = 0; i < bts.length; i++){ %>
+          <tr>
+              <td><%= i+1 %></td>
+              <td><%= bts[i].nodeBID %></td>
+              <td><%= bts[i].longitude %></td>              
+              <td><%= bts[i].latitude %></td>
+              <td><%= bts[i].antennaHeight %></td>
+              <td><%= bts[i].band %></td>
+              <td><%= bts[i].bandwidth %></td>
+              <td><%= bts[i].scPower %></td>
+              <td><%= bts[i].EIRP %></td>
+              <td><%= bts[i].pnLoss %></td>
+              <td><%= bts[i].shadowFading %></td>
+              <td><%= bts[i].MAPL %></td>
+              <td><%= bts[i].radius %></td>
+              <td>
+                <form action="/bts/delete/<%= bts[i]._id %>?_method=DELETE" method="POST">
+                    <a href="/bts/edit/<%= bts[i]._id %>" class="btn btn-warning">
+                        <i class="fa fa-pencil-alt"></i>
+                        Edit
+                    </a>
+                
+                    <button class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                        Delete
+                    </button>
+                </form>
+              </td>
+          </tr>
+        <%}%>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  
